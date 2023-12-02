@@ -17,38 +17,29 @@ int main()
 {
     const int amountOfLines = 1000;
 
-
     cout << "Advent of Code 2023 - Day 01\n\n";
     cout << "Paste here the " << amountOfLines << " lines of calibrations values: \n\n";
 
-
     string* text = new string[amountOfLines];
 
-	// copy and paste the full text here
-    for (int i = 0; i < amountOfLines; i++) {
-		getline(cin, text[i]);
-	}
-
+    // copy and paste the full text here
+    for (int i = 0; i < amountOfLines; i++) getline(cin, text[i]);
     cout << endl << endl;
-
 
     // create an array of ints to store the sums
     int* sums = new int[amountOfLines];
     // initialize the final sum
     int finalSum = 0;
 
-
-
     // loop through the lines
     for (int i = 0; i < amountOfLines; i++)
     {
+        int firstDigit = -1, lastDigit = -1;
         string str = text[i];
-        int firstDigit = -1;
-		int lastDigit = -1;
 
-        //                                  #####################
-        //                                  # FIND FIRST NUMBER #
-        //                                  #####################
+        // #####################
+        // # FIND FIRST NUMBER #
+        // #####################
 
         // loop through the string in order
         for (int i_ordered = 0; i_ordered < str.length(); i_ordered++) {
@@ -60,8 +51,9 @@ int main()
             if (isdigit(str[i_ordered])) firstDigit = str[i_ordered] - '0';
             
             // loop through the array of number names
-            else for (int j = 0; j < 10; j++)
-            {
+            else for (int j = 0; j < 10; j++) {
+
+		// store name to compare
                 string number_name = numbers[j];
 
                 // if the current number name is longer than the remaining string skip it
@@ -73,17 +65,16 @@ int main()
                 // if substring of the number name is different from the current substring skip it
                 if (str.compare(i_ordered, number_name.length(), number_name) != 0) continue;
                 
-                // save founded digit
+                // store founded digit
                 firstDigit = j;
                 break;
             }
         }
 
-        //								    ####################
-        // 							        # FIND LAST NUMBER #
-        // 							        ####################
+        // ####################
+        // # FIND LAST NUMBER #
+        // ####################
         
-
         // loop through the string in reverse order
         for (int i_reverse = (int)str.length(); i_reverse > 0; i_reverse--) {
 
@@ -117,9 +108,7 @@ int main()
                 lastDigit = j;
                 break;
             }
-		}
-
-
+	}
 
         // combine the two digits into a single int
         sums[i] = (firstDigit * 10) + lastDigit;
@@ -129,9 +118,7 @@ int main()
         finalSum += sums[i];
     }
     
-
     cout << endl << "Total sum: " << finalSum << endl << endl;
-
     system("pause");
     return 0;
 }
