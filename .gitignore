@@ -1,0 +1,20 @@
+
+Advent_Of_CSharp.lnk
+Advent_Of_CPP.lnk
+
+CSharp Version/.vs
+CSharp Version/CSharp Version.sln
+CSharp Version/Advent_Of_CSharp/obj
+CSharp Version/Advent_Of_CSharp/bin
+CSharp Version/Advent_Of_CSharp/Advent_Of_CSharp.csproj
+
+CPP Version/.vs
+CPP Version/x64/Debug/Advent_Of_CPP.pdb
+CPP Version/x64/Debug/Advent_Of_CPP.exe
+CPP Version/CPP Version.sln
+CPP Version/Advent_Of_CPP/x64/*
+CPP Version/Advent_Of_CPP/x64/Debug
+CPP Version/Advent_Of_CPP/Advent_Of_CPP.vcxproj
+CPP Version/Advent_Of_CPP/Advent_Of_CPP.vcxproj.user
+CPP Version/Advent_Of_CPP/Advent_Of_CPP.vcxproj.filters
+
